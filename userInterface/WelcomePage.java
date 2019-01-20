@@ -1211,8 +1211,8 @@ public class WelcomePage extends javax.swing.JFrame {
 
 	public void confirmationMail(String to, String subject, String message) {
 
-		String user = "ali14tahir@gmail.com";
-		String passwordEmail = "iamJARED";
+		String user = "xyz@gmail.com";  // add your mail here
+		String passwordEmail = "xyz"; // add your correct password here
 
 		SendMail.send(to, subject, message, user, passwordEmail);
 
