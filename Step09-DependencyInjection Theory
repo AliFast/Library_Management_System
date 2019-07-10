@@ -1,0 +1,29 @@
+Step 09---Dependency Injection Theory
+
+@Component---> This is used to make the class a spring bean. When used we are asking the spring framework
+               to manage the instances of this class. It is actually a more general dependency injection
+               as we have different annotations for different purposes such as @Service,@Repository 
+               and @Controller. If we do not want to specify that purpose we use @Component annotation.
+               
+               according to its documentation --->Indicates that an annotated class is a "component".
+               Such classes are considered as candidates for auto-detection when using annotation-based 
+               configuration and classpath scanning.
+               
+               
+@Service ---> used when our class has business logic inside it.
+
+@Repository ---> used when our class saves something in Database like with JPA
+
+@Controller ---> used to specify a controller for web requests.
+
+we could have used @Componenet in our LoginController.
+             
+@Autowired ---> used to inject an instance of a spring bean. It asks the spring framework to give it the 
+                instacne of Spring bean it has created.
+             
+@ComponentScan ---> When we used @SpringBootApplication annotation it autmatically includes @ComponentScan annotation
+                    This annotation is responsible for scanning all the Components. It scans all the component used
+                    in the same package or sub packages of class where @SpringBootApplication was used. If we use @Autowired 
+                    annotation outside its package our application will fail to find this Spring bean as this component was not 
+                    scanned by @ComponentScan. To solve this we can either add an explicit @ComponentScan("new class address")
+                    with the @SpringBootApplication annotation or bring that class in this annotations package or sub-packages.
